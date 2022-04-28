@@ -1,6 +1,6 @@
 FROM node:16.14-alpine as build-stage
 WORKDIR /app
-COPY package*.json/ /usr/src/web
+COPY package*.json/ /app/
 RUN npm ci
 COPY ./ /usr/src/web
 RUN npm run build
