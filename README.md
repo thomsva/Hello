@@ -1,6 +1,7 @@
 # Hello world app
+[![Deployed to Dockerhub](https://github.com/thomsva/Hello/actions/workflows/deploy.yml/badge.svg)](https://github.com/thomsva/Hello/actions/workflows/deploy.yml)
 
-An greeting app. 
+A greeting app. 
 
 ## Starting the application
 
