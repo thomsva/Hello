@@ -6,22 +6,19 @@ on:
       - main
     
 jobs:
-
-  build-and-publish:
-      runs-on: ubuntu-20.04
-      steps:
-      - uses: actions/checkout@v2
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+  runs-on: ubuntu-latest
+    name: Docker Build, Tag & Publish
+    steps:
+      - name: Build, Tag & Publish Image to DockerHub
+        uses: dinushchathurya/build-tag-push-action@v1.2.1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
-      - name: Build and upload 
-        run: |
-          docker build . -t thomsva/hello 
-          docker push thomsva/hello:latest
-
-
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          context: .
+          file: Dockerfile
+          repoOwner: ${{ secrets.DOCKER_HUB_USER }}
+          repository:  hello
+          tag: latest
 
   # build_and_publish:
   #   runs-on: ubuntu-20.04
