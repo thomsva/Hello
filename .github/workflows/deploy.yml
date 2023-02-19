@@ -1,10 +1,9 @@
-name: Deployment to Heroku
+name: Deployment to Dockerhub
 
 on:
   push:
     branches: 
       - main
-
     
 jobs:
 
