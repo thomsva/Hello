@@ -7,18 +7,18 @@ on:
     
 jobs:
   runs-on: ubuntu-latest
-    name: Docker Build, Tag & Publish
-    steps:
-      - name: Build, Tag & Publish Image to DockerHub
-        uses: dinushchathurya/build-tag-push-action@v1.2.1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          context: .
-          file: Dockerfile
-          repoOwner: ${{ secrets.DOCKER_HUB_USER }}
-          repository:  hello
-          tag: latest
+  name: Docker Build, Tag & Publish
+  steps:
+    - name: Build, Tag & Publish Image to DockerHub
+      uses: dinushchathurya/build-tag-push-action@v1.2.1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        context: .
+        file: Dockerfile
+        repoOwner: ${{ secrets.DOCKER_HUB_USER }}
+        repository:  hello
+        tag: latest
 
   # build_and_publish:
   #   runs-on: ubuntu-20.04
