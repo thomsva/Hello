@@ -9,6 +9,7 @@ const App = () => {
 
   return (
     <Paper sx={{ m: 5, p: 5 }} elevation={3}>
+      <Typography>Version 1.1</Typography>
       <Typography mb={10} variant='h2'>Hello {name!==''?name:'unknown'}!</Typography>
       <Stack spacing={2}>
         <TextField
